@@ -15,7 +15,9 @@ $(document).ready(function (){
 	var charLengthWarning = function (length){
 		console.log(length);
 		if (length > 10) {
-			$('#tweet-controls div').css({color:'red'});
+			$('#tweet-controls div').css({color:'gray'});
+		}
+		if (length >= 0) {
 			$('#tweet-submit').show({display: 'inline-block'})
 		}
 		if (length <= 10) {
