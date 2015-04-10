@@ -17,13 +17,13 @@ $(document).ready(function (){
 		if (length > 10) {
 			$('#tweet-controls div').css({color:'gray'});
 		}
+		else {
+			$('#tweet-controls div').css({color:'red'});
+		}
 		if (length >= 0) {
 			$('#tweet-submit').show({display: 'inline-block'})
 		}
-		if (length <= 10) {
-			$('#tweet-controls div').css({color:'red'});
-		}
-		if (length < 0) {
+		else {
 			$('#tweet-submit').hide({display: 'none'});
 		}
 	} //-->char count turn red at 10, submit button disappear at -1.
@@ -34,6 +34,16 @@ $(document).ready(function (){
 		$('#tweet-controls div').text(length);
 		charLengthWarning(length);
 	})//--> char countdown
+
+
+	$('#tweet-submit').click(function() {
+		var newTweet = $('.tweet').clone();
+		newTweet.find('.avatar').prop('src', 'img/alagoon.jpg');
+		newTweet.find('.username').html('@jqueryboss');
+		newTweet.find('.fullname').html('jQuery Boss');
+		newTweet.find('.tweet-text').html('.tweet-compose').val();
+		$('#stream').prepend(newTweet).animate();
+	}) //--> prepends users tweet to stream
 
 
 }); //-- document ready -->
