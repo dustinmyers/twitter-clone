@@ -1,4 +1,9 @@
 $(document).ready(function (){
+	$('.stats').hide();
+	$('.reply').hide();
+	$('.tweet-actions').hide();
+
+
 	$('#tweet-text-area').focus(function() {
 		$("#tweet-text-area").animate({height: '5em'}),
 		$('#tweet-controls div').show({display: 'inline-block'}),
@@ -8,7 +13,7 @@ $(document).ready(function (){
 		$("#tweet-text-area").animate({height: '2.5em'});
 		$('#tweet-controls div').hide({display: 'none'}),
 		$('#tweet-submit').hide({display: 'none'})
-	})	 // on leave tweet text area, shrink input field and hide tweet button and char count
+	})	 // on leaving tweet text area, shrink input field and hide tweet button and char count
 	
 	var maxLength = 140;
 
@@ -37,12 +42,12 @@ $(document).ready(function (){
 
 
 	$('#tweet-submit').click(function() {
-		var newTweet = $('.tweet').clone();
+		var newTweet = $('.tweet:first').clone();
 		newTweet.find('.avatar').prop('src', 'img/alagoon.jpg');
 		newTweet.find('.username').html('@jqueryboss');
 		newTweet.find('.fullname').html('jQuery Boss');
-		newTweet.find('.tweet-text').html('.tweet-compose').val();
-		$('#stream').prepend(newTweet).animate();
+		newTweet.find('.tweet-text').html($('.tweet-compose').val());
+		$('#stream').prepend(newTweet);
 	}) //--> prepends users tweet to stream
 
 
