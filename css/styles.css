@@ -76,7 +76,6 @@ body {
 	float: right;
 	width: 522px;
 	background-color: white;
-	border-radius: 6px;
 }
 	#main h2 {
 		font-size: 18px;
@@ -86,7 +85,6 @@ body {
 
 /* DASHBOARD */
 #dashboard {
-	border-radius: 6px;
 	background-color: white;
 	float: left;
 	width: 302px;
@@ -123,7 +121,6 @@ body {
 		font-size: 13px;
 		padding: 5px;
 		border: 1px solid #ccc;
-		border-radius: 3px;
 		margin-bottom: 1em;
 		box-sizing: border-box;
 	}
@@ -145,7 +142,6 @@ body {
 	padding: 9px 12px;
 	border-bottom: 1px solid #e8e8e8;
 	min-height: 60px;
-	border-radius: 6px;
 }
 
 	.tweet .avatar {

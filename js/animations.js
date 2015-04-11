@@ -2,7 +2,20 @@ $(document).ready(function (){
 	$('.stats').hide();
 	$('.reply').hide();
 	$('.tweet-actions').hide();
+	$('.btn-default').hide();
 
+	$('.tweet').click(function(){
+		console.log('tweet clicked')
+		$(this).find('.stats').show().css({'color': 'gray'});
+		$(this).find('.reply').show();
+	});
+
+	$('.tweet').hover(function(){
+		$(this).find('.tweet-actions').show();
+	}, 
+	function(){
+		$(this).find('.tweet-actions').hide();
+	});
 
 	$('#tweet-text-area').focus(function() {
 		$("#tweet-text-area").animate({height: '5em'}),
@@ -40,6 +53,7 @@ $(document).ready(function (){
 		charLengthWarning(length);
 	})//--> char countdown
 
+	$('.avatar').tooltip().html($('fullname').val());
 
 	$('#tweet-submit').click(function() {
 		var newTweet = $('.tweet:first').clone();
@@ -49,7 +63,6 @@ $(document).ready(function (){
 		newTweet.find('.tweet-text').html($('.tweet-compose').val());
 		$('#stream').prepend(newTweet);
 	}) //--> prepends users tweet to stream
-
 
 }); //-- document ready -->
 
